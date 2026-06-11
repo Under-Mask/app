@@ -1,7 +1,7 @@
 import { createClient } from '@supabase/supabase-js'
 
-// .env 안 쓰고 그냥 직통으로 박아버리기
-const supabaseUrl = 'https://xcqcwrbeecjmvyegohzc.supabase.co'
-const supabaseKey = 'sb_publishable_1ZU-NhBq9bpE5ziTiltPVg_oa7yT65j'
+// Vercel이 이 변수들을 읽어서 키 값을 꽂아줄 겁니다.
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
+const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY
 
 export const supabase = createClient(supabaseUrl, supabaseKey)
